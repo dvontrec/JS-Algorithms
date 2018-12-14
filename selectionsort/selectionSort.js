@@ -13,10 +13,13 @@ function selectionSort(arr) {
         min = i;
       }
     }
-    // swap the min with the pointer
-    let temp = arr[pointer];
-    arr[pointer] = arr[min];
-    arr[min] = temp;
+    // if pointer is not the min
+    if (pointer != min) {
+      // swap the min with the pointer
+      let temp = arr[pointer];
+      arr[pointer] = arr[min];
+      arr[min] = temp;
+    }
     // increment the pointer
     pointer++;
   }
