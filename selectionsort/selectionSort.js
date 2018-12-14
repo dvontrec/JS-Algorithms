@@ -25,4 +25,4 @@ function selectionSort(arr) {
 }
 
 console.log(selectionSort([3, 1, 4, 12, -1, -8, 103, 6, 33, 5, 11, 2, 58, 0])); // [ -8, -1, 0, 1, 2, 3, 4, 5, 6, 11, 12, 33, 58, 103 ]
-console.log(selectionSort([1, 2, 3, 5, 4, 6])); // [ 1, 2, 3, 4, 5, 6 ]
+console.log(selectionSort([1, 2, 3, 5, 4, 1, 6])); // [ 1, 2, 3, 4, 5, 6 ]
