@@ -1,4 +1,4 @@
-# M erge Sort
+# Merge Sort
 
 - Break up the array into halves until you have arrays yjay are empty or have 1 element
 
