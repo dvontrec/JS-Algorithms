@@ -46,3 +46,4 @@ function merge(arr1, arr2) {
 }
 
 console.log(mergeSort([65, 44, 1, 2, 9, 8, 3])); // [1,2,3,8,9,44,65]
+console.log(mergeSort(['z', 'c', 'a', 'k', 'f'])); // [1,2,3,8,9,44,65]
