@@ -1,6 +1,6 @@
 # Quick Sort
 
-##Pivot
+## Pivot
 
 - takes 3 arguments the array, the stary index, and the end index
 
