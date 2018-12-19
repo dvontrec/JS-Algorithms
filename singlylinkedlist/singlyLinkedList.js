@@ -26,12 +26,13 @@ class SinglyLinkedList {
     }
     this.tail = node;
     this.length++;
+    return this;
   }
 }
 
 var list = new SinglyLinkedList();
-list.push('hello');
-list.push('ok');
-list.push('goodbye');
+console.log(list.push('hello'));
+console.log(list.push('ok'));
+console.log(list.push('goodbye'));
 console.log(list);
 console.log(list.head.next);
