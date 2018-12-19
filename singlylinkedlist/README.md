@@ -24,3 +24,11 @@
 - Decrement the length of the list by 1
 - If length is zero after pop make head and tail null
 - Return the node that was removed
+
+## Shift
+
+- If there are no nodes return undefined
+- Store the current head property in a variable
+- Set the head property to be the current heads next property
+- Decrement the length by 1
+- return the falue of the node removed

@@ -55,6 +55,23 @@ class SinglyLinkedList {
     // return the old tail
     return current;
   }
+
+  // function used to grab and remove the first value from the list
+  shift() {
+    // if there is no head return undefined
+    if (!this.head) {
+      return undefined;
+    }
+    let head = this.head;
+    this.head = this.head.next;
+    this.length--;
+    // if there is no head change the tail to null
+    if (!this.head) {
+      this.tail = null;
+    }
+    // return the old tail
+    return head;
+  }
 }
 
 var list = new SinglyLinkedList();
@@ -71,7 +88,28 @@ console.log('pop');
 console.log(list.pop());
 console.log('pop');
 console.log(list);
-console.log('pop');
+console.log('shift');
 console.log(list.pop());
 console.log('pop');
+console.log(list);
+console.log();
+console.log();
+console.log();
+console.log();
+list.push('hello');
+list.push('ok');
+list.push('goodbye');
+console.log();
+console.log(list);
+console.log('shift');
+console.log(list.shift());
+console.log('shift');
+console.log(list);
+console.log('shift');
+console.log(list.shift());
+console.log('shift');
+console.log(list);
+console.log('shift');
+console.log(list.shift());
+console.log('shift');
 console.log(list);
