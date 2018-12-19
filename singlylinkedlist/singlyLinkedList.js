@@ -72,44 +72,60 @@ class SinglyLinkedList {
     // return the old tail
     return head;
   }
+
+  // function used to add a node to the beginnning of a list
+  unshift(val) {
+    let node = new Node(val);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    }
+    node.next = this.head;
+    this.head = node;
+    this.length++;
+    return this;
+  }
 }
 
 var list = new SinglyLinkedList();
 list.push('hello');
 list.push('ok');
 list.push('goodbye');
-console.log();
+// console.log();
+// console.log(list);
+// console.log('pop');
+// console.log(list.pop());
+// console.log('pop');
+// console.log(list);
+// console.log('pop');
+// console.log(list.pop());
+// console.log('pop');
+// console.log(list);
+// console.log('shift');
+// console.log(list.pop());
+// console.log('pop');
+// console.log(list);
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// list.push('hello');
+// list.push('ok');
+// list.push('goodbye');
+// console.log();
+// console.log(list);
+// console.log('shift');
+// console.log(list.shift());
+// console.log('shift');
+// console.log(list);
+// console.log('shift');
+// console.log(list.shift());
+// console.log('shift');
+// console.log(list);
+// console.log('shift');
+// console.log(list.shift());
+// console.log('shift');
+// console.log(list);
+list.unshift('hey');
 console.log(list);
-console.log('pop');
-console.log(list.pop());
-console.log('pop');
-console.log(list);
-console.log('pop');
-console.log(list.pop());
-console.log('pop');
-console.log(list);
-console.log('shift');
-console.log(list.pop());
-console.log('pop');
-console.log(list);
-console.log();
-console.log();
-console.log();
-console.log();
-list.push('hello');
-list.push('ok');
-list.push('goodbye');
-console.log();
-console.log(list);
-console.log('shift');
-console.log(list.shift());
-console.log('shift');
-console.log(list);
-console.log('shift');
-console.log(list.shift());
-console.log('shift');
-console.log(list);
-console.log('shift');
-console.log(list.shift());
-console.log('shift');
-console.log(list);
+console.log(list.head);

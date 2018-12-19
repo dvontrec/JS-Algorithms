@@ -32,3 +32,13 @@
 - Set the head property to be the current heads next property
 - Decrement the length by 1
 - return the falue of the node removed
+
+## Unshift
+
+- Accepts a value
+- Creates a new node using the value passed to the function
+- If there is no head set the head and tail to be the new node
+- Set the newly created nodes next property to be the current list head
+- set the lists head to be the newly created node
+- Increment the ength of the ist by 1
+- Return the linked list
