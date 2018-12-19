@@ -14,3 +14,13 @@
 - If there is a head set the newly created node to be the next of the tail
 - Increment length by 1
 - return the linked list
+
+## Pop
+
+- If there are no nodes in the list return undefined
+- Loop through the list until tail is reached
+- Set the property of the 2nd to last node to be null
+- set the new tail to be the second to last item
+- Decrement the length of the list by 1
+- If length is zero after pop make head and tail null
+- Return the node that was removed
