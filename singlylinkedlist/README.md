@@ -13,7 +13,7 @@
 - If there is no head set the head and tail to be the newly created node
 - If there is a head set the newly created node to be the next of the tail
 - Increment length by 1
-- return the linked list
+- Return the linked list
 
 ## Pop
 
@@ -31,7 +31,7 @@
 - Store the current head property in a variable
 - Set the head property to be the current heads next property
 - Decrement the length by 1
-- return the falue of the node removed
+- Return the falue of the node removed
 
 ## Unshift
 
@@ -39,7 +39,7 @@
 - Creates a new node using the value passed to the function
 - If there is no head set the head and tail to be the new node
 - Set the newly created nodes next property to be the current list head
-- set the lists head to be the newly created node
+- Set the lists head to be the newly created node
 - Increment the ength of the ist by 1
 - Return the linked list
 
@@ -54,3 +54,26 @@
 - Accepts an index and a value
 - Uses get to find specific node
 - Updates the value of the node and return true
+
+# Insert
+
+- Accepts an index and a value
+- If index is less than zero or greater than the length return false
+- If the index is the same as the length push a new node to the end of the list
+- If the index is 0 unshift the node to the head.
+- Get the index -1 to get node before
+- Set that nodes next to be the new node
+- Set the old nex to the new nodes next
+- Increment the length
+- Return true
+
+# Remove
+
+- Accepts an index
+- If the index is less than zero or greater than length return undefined
+- If the index is the same as the length -1, pop
+- If the index is 0 shift
+- Otherwise use get to get previios node
+- Set the next property of that node to be the next of the next node
+- Decrement the length
+- Return the value of the node removed

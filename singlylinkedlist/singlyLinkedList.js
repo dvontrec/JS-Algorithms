@@ -114,12 +114,53 @@ class SinglyLinkedList {
     }
     return false;
   }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+    if (index === 0) {
+      return !!this.unshift(value);
+    }
+    if (index === this.length) {
+      return !!this.push(value);
+    }
+    // create a new node
+    let newNode = new Node(value);
+    // finds the node before the current index
+    let preNode = this.get(index - 1);
+    // sets the properties of this node and the previous
+    newNode.next = preNode.next;
+    preNode.next = newNode;
+    this.length++;
+    return true;
+  }
+
+  remove(index) {
+    // If the index is less than zero or greater than length return undefined
+    if (index < 0 || index > this.length) {
+      return undefined;
+    }
+    if (index === 0) {
+      return this.shift();
+    }
+    if (index === this.length) {
+      return this.pop();
+    }
+    // grab the index and index before
+    let pre = this.get(index - 1);
+    let curr = pre.next;
+    // Sets the next of the previus to be the next next(skip)
+    pre.next = curr.next;
+    this.length--;
+    // return the value of the node removed
+    return curr.val;
+  }
 }
 
 var list = new SinglyLinkedList();
 list.push('hello');
 list.push('ok');
-list.push('goodbye');
 // console.log();
 // console.log(list);
 // console.log('pop');
@@ -155,10 +196,11 @@ list.push('goodbye');
 // console.log(list.shift());
 // console.log('shift');
 // console.log(list);
-list.unshift('hey');
+// list.unshift('hey');
 // console.log(list);
 // console.log(list.head);
+list.insert(1, 'are you');
 console.log(list);
-console.log(list.set(0, 'heyyy'));
-console.log(list.set(8, 'uhh'));
+console.log(list.get(1));
+console.log(list.remove(1));
 console.log(list);
