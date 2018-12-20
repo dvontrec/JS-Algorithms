@@ -105,6 +105,15 @@ class SinglyLinkedList {
     // return the current
     return current;
   }
+
+  set(index, value) {
+    let node = this.get(index);
+    if (node) {
+      node.val = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 var list = new SinglyLinkedList();
@@ -149,8 +158,7 @@ list.push('goodbye');
 list.unshift('hey');
 // console.log(list);
 // console.log(list.head);
-console.log(list.get(-1));
-console.log(list.get(6));
-console.log(list.get(1));
-console.log(list.get(0));
-console.log(list.get(3));
+console.log(list);
+console.log(list.set(0, 'heyyy'));
+console.log(list.set(8, 'uhh'));
+console.log(list);

@@ -48,3 +48,9 @@
 - Accepts an index (number)
 - If the index is less than zero or greater than or equal to the list length return null
 - Loop through the list until the index is reached and return the node at the specific index
+
+# Set
+
+- Accepts an index and a value
+- Uses get to find specific node
+- Updates the value of the node and return true
