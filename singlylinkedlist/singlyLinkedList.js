@@ -138,13 +138,13 @@ class SinglyLinkedList {
 
   remove(index) {
     // If the index is less than zero or greater than length return undefined
-    if (index < 0 || index > this.length) {
+    if (index < 0 || index >= this.length) {
       return undefined;
     }
     if (index === 0) {
       return this.shift();
     }
-    if (index === this.length) {
+    if (index === this.length - 1) {
       return this.pop();
     }
     // grab the index and index before
