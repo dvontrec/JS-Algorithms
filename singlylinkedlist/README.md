@@ -49,13 +49,13 @@
 - If the index is less than zero or greater than or equal to the list length return null
 - Loop through the list until the index is reached and return the node at the specific index
 
-# Set
+## Set
 
 - Accepts an index and a value
 - Uses get to find specific node
 - Updates the value of the node and return true
 
-# Insert
+## Insert
 
 - Accepts an index and a value
 - If index is less than zero or greater than the length return false
@@ -67,7 +67,7 @@
 - Increment the length
 - Return true
 
-# Remove
+## Remove
 
 - Accepts an index
 - If the index is less than zero or greater than length return undefined
@@ -77,3 +77,13 @@
 - Set the next property of that node to be the next of the next node
 - Decrement the length
 - Return the value of the node removed
+
+## Reverse
+
+- Swap the head and the tail
+- Create a variable for next
+- Create a variable for prev
+- Create a node variable initialized to start at the head
+- Set the next to be the next property of whatever node is
+- Set the prev to be the value of the node
+- Set the node variable to be the value of the next

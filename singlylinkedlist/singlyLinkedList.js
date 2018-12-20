@@ -156,11 +156,36 @@ class SinglyLinkedList {
     // return the value of the node removed
     return curr.val;
   }
+
+  // function used to reverse singly linked lists
+  reverse() {
+    // DO stuff
+    // Create variables for curr, prev, and next
+    let node = this.head;
+    let prev = null;
+    let next = null;
+    // Swap the head and the tail
+    this.head = this.tail;
+    this.tail = node;
+    // loop through the list
+    for (let i = 0; i < this.length; i++) {
+      // Saves the next of the current node
+      next = node.next;
+      // set the next property of the current node to be the previous node
+      node.next = prev;
+      // sets the current node to be the new pre
+      prev = node;
+      // moves the node along
+      node = next;
+    }
+  }
 }
 
 var list = new SinglyLinkedList();
 list.push('hello');
-list.push('ok');
+list.push('how');
+list.push('are');
+list.push('you');
 // console.log();
 // console.log(list);
 // console.log('pop');
@@ -199,8 +224,26 @@ list.push('ok');
 // list.unshift('hey');
 // console.log(list);
 // console.log(list.head);
-list.insert(1, 'are you');
+// list.insert(1, 'are you');
+// console.log(list);
+// console.log(list.get(1));
+// console.log(list.remove(1));
 console.log(list);
-console.log(list.get(1));
-console.log(list.remove(1));
+console.log();
+console.log();
+console.log();
+console.log();
+console.log(list.get(0).val);
+console.log(list.get(1).val);
+console.log(list.get(2).val);
+console.log(list.get(3).val);
+list.reverse();
+console.log();
+console.log();
 console.log(list);
+console.log();
+console.log();
+console.log(list.get(0).val);
+console.log(list.get(1).val);
+console.log(list.get(2).val);
+console.log(list.get(3).val);
