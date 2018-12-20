@@ -178,6 +178,7 @@ class SinglyLinkedList {
       // moves the node along
       node = next;
     }
+    return this;
   }
 }
 
