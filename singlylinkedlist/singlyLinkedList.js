@@ -79,8 +79,9 @@ class SinglyLinkedList {
     if (!this.head) {
       this.head = node;
       this.tail = node;
+    } else {
+      node.next = this.head;
     }
-    node.next = this.head;
     this.head = node;
     this.length++;
     return this;
@@ -88,9 +89,9 @@ class SinglyLinkedList {
 }
 
 var list = new SinglyLinkedList();
-list.push('hello');
-list.push('ok');
-list.push('goodbye');
+// list.push('hello');
+// list.push('ok');
+// list.push('goodbye');
 // console.log();
 // console.log(list);
 // console.log('pop');
