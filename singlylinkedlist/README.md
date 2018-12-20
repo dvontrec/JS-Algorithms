@@ -42,3 +42,9 @@
 - set the lists head to be the newly created node
 - Increment the ength of the ist by 1
 - Return the linked list
+
+## Get
+
+- Accepts an index (number)
+- If the index is less than zero or greater than or equal to the list length return null
+- Loop through the list until the index is reached and return the node at the specific index

@@ -86,12 +86,31 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    }
+    // create a pointer that starts at zero
+    let pointer = 0;
+    // set the current node
+    let current = this.head;
+    // loop through until pointer is equal to the index
+    while (pointer < index) {
+      // increment the pointer
+      pointer++;
+      // set the current node to the old currents next
+      current = current.next;
+    }
+    // return the current
+    return current;
+  }
 }
 
 var list = new SinglyLinkedList();
-// list.push('hello');
-// list.push('ok');
-// list.push('goodbye');
+list.push('hello');
+list.push('ok');
+list.push('goodbye');
 // console.log();
 // console.log(list);
 // console.log('pop');
@@ -128,5 +147,10 @@ var list = new SinglyLinkedList();
 // console.log('shift');
 // console.log(list);
 list.unshift('hey');
-console.log(list);
-console.log(list.head);
+// console.log(list);
+// console.log(list.head);
+console.log(list.get(-1));
+console.log(list.get(6));
+console.log(list.get(1));
+console.log(list.get(0));
+console.log(list.get(3));
