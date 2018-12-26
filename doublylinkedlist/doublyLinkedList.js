@@ -51,10 +51,35 @@ class DoublyLinkedList {
     this.length--;
     return oldTail;
   }
+
+  shift() {
+    // check if list is empty
+    if (this.length === 0) {
+      return undefined;
+    }
+    // save the head in a variable
+    let oldHead = this.head;
+    // check if length is one
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      // update head
+      this.head = oldHead.next;
+      //sever connections
+      this.head.prev = null;
+      oldHead.next = null;
+    }
+    // Decrement the length
+    this.length--;
+    // return the old head
+    return oldHead;
+  }
 }
 
 let dList = new DoublyLinkedList();
 console.log(dList.push(1));
 console.log(dList.push(2));
-console.log(dList.pop());
+console.log(dList.push(3));
+console.log(dList.shift());
 console.log(dList);

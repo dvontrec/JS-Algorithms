@@ -27,3 +27,15 @@
 - Set the new tails next to be null
 - Decrement the length
 - Return the old tail
+
+## Shift
+
+- Removes the head from a doubly linked list
+- If the length is 0 return undefined
+- Store the current head in a variable
+- If the length is one set head and tail to null
+- Otherwise set the next node to be the new head
+- Set the new heads prev property to null
+- Set the old heads next to null
+- Decrement the length
+- Return the old head
