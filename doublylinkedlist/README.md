@@ -16,3 +16,14 @@
 - Set the next of the tail to be the new node
 - Increment the length
 - Return the list
+
+## Pop
+
+- Removes the last value from the list
+- If the list is empty return undefined
+- Set the current tail in a variable to be returned
+- If the length is 1 set the head and tail both to be null
+- Update the tail to be the prev of the current tail
+- Set the new tails next to be null
+- Decrement the length
+- Return the old tail

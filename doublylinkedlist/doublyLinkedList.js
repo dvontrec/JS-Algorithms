@@ -31,8 +31,30 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  pop() {
+    // if the list is empty return undefined
+    if (this.length === 0) {
+      return undefined;
+    }
+    // Save the old tail to a variable
+    let oldTail = this.tail;
+    // if the length is 1 set the head and the tail to be 1
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = oldTail.prev;
+      this.tail.next = null;
+      oldTail.prev = null;
+    }
+    this.length--;
+    return oldTail;
+  }
 }
 
 let dList = new DoublyLinkedList();
 console.log(dList.push(1));
 console.log(dList.push(2));
+console.log(dList.pop());
+console.log(dList);
