@@ -154,14 +154,38 @@ class DoublyLinkedList {
     this.length++;
     return true;
   }
+
+  remove(index) {
+    // Check for valid index
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    }
+    if (index === 0) {
+      return this.shift();
+    }
+    if (index === this.length - 1) {
+      return this.pop();
+    }
+    let foundNode = this.get(index);
+    let prevNode = foundNode.prev;
+    let nextNode = foundNode.next;
+    prevNode.next = nextNode;
+    nextNode.prev = prevNode;
+    foundNode.next = null;
+    foundNode.prev = null;
+    this.length--;
+    return foundNode;
+  }
 }
 
 let dList = new DoublyLinkedList();
 dList.push(0);
 dList.push(2);
 dList.insert(1, 'one');
+console.log(dList);
+console.log();
+console.log(dList.remove(1));
+console.log();
 console.log(dList.get(0));
 console.log();
 console.log(dList.get(1));
-console.log();
-console.log(dList.get(2));
