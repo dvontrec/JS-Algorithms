@@ -92,11 +92,47 @@ class DoublyLinkedList {
     // return the list
     return this;
   }
+
+  get(index) {
+    // check if the index is valid
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+    // create a variable for found node
+    let foundNode;
+    let counter;
+    // if index is less than or equal to half the length
+    if (index <= this.length / 2) {
+      foundNode = this.head;
+      // set a counter at 0
+      counter = 0;
+      // loop through nodes until the correct node is found
+      while (counter < index) {
+        foundNode = foundNode.next;
+        counter++;
+      }
+    } else {
+      foundNode = this.tail;
+      // set a counter at length -1
+      counter = this.length - 1;
+      // loop through nodes until the correct node is found
+      while (counter > index) {
+        foundNode = foundNode.prev;
+        counter--;
+      }
+    }
+    return foundNode;
+  }
 }
 
 let dList = new DoublyLinkedList();
+dList.push(0);
 dList.push(1);
 dList.push(2);
 dList.push(3);
-console.log(dList.unShift(0));
+dList.push(4);
+dList.push(5);
+dList.push(6);
+dList.push(7);
+console.log(dList.get(7));
 // console.log(dList);

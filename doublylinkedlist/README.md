@@ -50,3 +50,14 @@
 - Update the head to be the new node
 - Increment the length
 - Return the list
+
+## Get
+
+- Accepts an index
+- If the index is less than 0 or greaterthan or equal to the length return null
+- If the index is less than or equal to half the length of the list
+  - Loop through the list starting from the head and moving towards the middle
+  - return the node once it is found
+- If the index is greater than half the length of the list
+  - Loop through the list tstarting from the tail and moving towards the middle
+- Returns the node at the given index
