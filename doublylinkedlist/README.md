@@ -39,3 +39,14 @@
 - Set the old heads next to null
 - Decrement the length
 - Return the old head
+
+## Unshift
+
+- Accepts a value
+- Adds a new node to the beginning of a list
+- If the list is empty sets the head and the tail to be the new node
+- Otherwise set the prev of the head to be the new node
+- Set the next of the new node to be the head
+- Update the head to be the new node
+- Increment the length
+- Return the list

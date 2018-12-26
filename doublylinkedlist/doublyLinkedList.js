@@ -75,11 +75,28 @@ class DoublyLinkedList {
     // return the old head
     return oldHead;
   }
+
+  unShift(val) {
+    // create a new node from the passed in value
+    let newNode = new Node(val);
+    // Check if the list is empty
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    // return the list
+    return this;
+  }
 }
 
 let dList = new DoublyLinkedList();
-console.log(dList.push(1));
-console.log(dList.push(2));
-console.log(dList.push(3));
-console.log(dList.shift());
-console.log(dList);
+dList.push(1);
+dList.push(2);
+dList.push(3);
+console.log(dList.unShift(0));
+// console.log(dList);
