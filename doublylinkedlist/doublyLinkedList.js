@@ -123,6 +123,15 @@ class DoublyLinkedList {
     }
     return foundNode;
   }
+
+  set(index, val) {
+    let node = this.get(index);
+    if (node) {
+      node.val = val;
+      return true;
+    }
+    return false;
+  }
 }
 
 let dList = new DoublyLinkedList();
@@ -134,5 +143,7 @@ dList.push(4);
 dList.push(5);
 dList.push(6);
 dList.push(7);
+console.log(dList.get(7));
+dList.set(8, 'seven');
 console.log(dList.get(7));
 // console.log(dList);

@@ -61,3 +61,11 @@
 - If the index is greater than half the length of the list
   - Loop through the list tstarting from the tail and moving towards the middle
 - Returns the node at the given index
+
+## Set
+
+- Accepts an index and a variable
+- Create a variable that is a result of getting from index
+  - If a valid node is returned set the value of the node to be tha value passed to the function
+  - return true
+- Otherwise return false
