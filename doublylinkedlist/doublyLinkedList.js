@@ -132,18 +132,36 @@ class DoublyLinkedList {
     }
     return false;
   }
+
+  insert(index, val) {
+    // check for valid index
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+    // check for 0 or length value
+    if (index === 0) {
+      return !!this.unShift(val);
+    }
+    if (index === this.length) {
+      return !!this.push(val);
+    }
+    let node = new Node(val);
+    let prevNode = this.get(index - 1);
+    node.prev = prevNode;
+    node.next = prevNode.next;
+    prevNode.next.prev = node;
+    prevNode.next = node;
+    this.length++;
+    return true;
+  }
 }
 
 let dList = new DoublyLinkedList();
 dList.push(0);
-dList.push(1);
 dList.push(2);
-dList.push(3);
-dList.push(4);
-dList.push(5);
-dList.push(6);
-dList.push(7);
-console.log(dList.get(7));
-dList.set(8, 'seven');
-console.log(dList.get(7));
-// console.log(dList);
+dList.insert(1, 'one');
+console.log(dList.get(0));
+console.log();
+console.log(dList.get(1));
+console.log();
+console.log(dList.get(2));

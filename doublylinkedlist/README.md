@@ -69,3 +69,14 @@
   - If a valid node is returned set the value of the node to be tha value passed to the function
   - return true
 - Otherwise return false
+
+## Insert
+
+- Accepts an index and a value
+- If the index is less than zero or greater than the lebgth return false
+- If index is 0, unshift
+- If index is same as length push
+- Use get method to access index -1
+- Set the next and prev properties on the correct nodes to link everything together
+- Increment the length
+- Return true
