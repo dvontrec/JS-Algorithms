@@ -19,3 +19,18 @@
       - If there is, move to that node and compare values again
       - If there is not place the new node as the left
 - Return the tree
+
+## Find
+
+- Start at the root
+- If there is no root return false, there are no nodes on the tree
+- If there is a root check if it is the value we are looking for, if so return true
+- If not check if the root value is greater than or less than the search value
+  - If it is greater
+    - Check if there is a node to the right
+    - If there is move to thr right node
+    - If there is not return false
+  - If it is less
+    - Check if there is a node to the left
+    - If there is move to thr left node
+    - If there is not return false
