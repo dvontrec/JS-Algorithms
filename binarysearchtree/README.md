@@ -34,3 +34,32 @@
     - Check if there is a node to the left
     - If there is move to thr left node
     - If there is not return false
+
+# Tree Traversal
+
+## Breadth First Search
+
+### Horizontal (Breadth) before Vertical (Depth)
+
+- Create a queue (can be an array) and a variable to store the values of nodes visited
+- Place the root in the queue
+- Loop as long as there is anything in the que
+  - Deque a node from the que and push the value of the node into the variable that stores the nodes
+  - If there is a left property on the node dequed add it to the que
+  - If there is a right property on the node dequed add it to the que
+- Return the value that stores the values
+
+## Depth First Search ()
+
+### Vertical (Depth) before Horizontal (Breadth)
+
+## PreOrder (Left side first)
+
+- Create a variable to store the visited nodes
+- Create a variable called current and store the root
+- Write a helper function that accepts a node
+  - Push the node value to the variable that stores the values
+  - If the node has a left property call the helper on the left node
+  - If the node has a right property call the helper on the right
+- Invoke the helper with the current variable
+- Return the array of variables

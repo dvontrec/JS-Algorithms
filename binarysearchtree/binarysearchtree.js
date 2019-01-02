@@ -69,4 +69,67 @@ class BinarySearchTree {
     }
     return false;
   }
+
+  // function that returns all the nodes usinf breadth first
+  breadthFirstSearch() {
+    // If there is no root return null
+    if (!this.root) {
+      return null;
+    }
+    // creates an array to hold the nodes and a queue for checking nodes
+    let nodes = [];
+    let queue = [this.root];
+    // while there is a que
+    while (queue.length > 0) {
+      // remove the node from the que
+      let node = queue.pop();
+      // add the left and right of the removed node to the que
+      if (node.left) {
+        queue.unshift(node.left);
+      }
+      if (node.right) {
+        queue.unshift(node.right);
+      }
+      // add the node to the nodes
+      nodes.push(node.value);
+    }
+    return nodes;
+  }
+
+  // function that returns the nodes using depth first (PreOrder)
+  depthFirstSearchPreOrder() {
+    // Create variable to store visited nodes
+    let nodes = [];
+    // Create variable to store current node(root)
+    let current = this.root;
+    // push values from helper function to nodes array
+    traverse(current);
+    // helper function for raversal
+    function traverse(node) {
+      // Do stuff
+      // return node value
+      nodes.push(node.value);
+      // If the node has a left
+      if (node.left) {
+        traverse(node.left);
+      }
+      // If the node has a right
+      if (node.right) {
+        traverse(node.right);
+      }
+    }
+    // return array of variables
+    return nodes;
+  }
 }
+
+let bst = new BinarySearchTree();
+bst.insert(10);
+bst.insert(6);
+bst.insert(15);
+bst.insert(3);
+bst.insert(8);
+bst.insert(20);
+
+console.log(bst.breadthFirstSearch()); // [10, 6, 15, 3, 8, 20]
+console.log(bst.depthFirstSearchPreOrder()); // [10, 6, 3, 8, 15, 20]
