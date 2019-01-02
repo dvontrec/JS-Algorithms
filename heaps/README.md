@@ -26,3 +26,22 @@
   - the child index is swapped to now be the parent index
   - keep looping and swapping until neither child is larger than the element
 - Return the old root
+
+# PriorityQueue
+
+# Min Binary Heap
+
+- Binary heap where parent nodes are smaller than the children
+
+##Enqueue
+
+- Accepts a value and a priority
+- Creates a node with given value and priority
+- Places node in heap based on priority
+- Same as Insert
+
+## Dequeue
+
+- Removes root element and returns it
+- Rearranges heap based on priority
+- Same as Extract
