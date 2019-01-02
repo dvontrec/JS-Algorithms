@@ -121,6 +121,32 @@ class BinarySearchTree {
     // return array of variables
     return nodes;
   }
+
+  // function that returns the nodes using depth first (PreOrder)
+  depthFirstSearchPostOrder() {
+    // Create variable to store visited nodes
+    let nodes = [];
+    // Create variable to store current node(root)
+    let current = this.root;
+    // push values from helper function to nodes array
+    traverse(current);
+    // helper function for raversal
+    function traverse(node) {
+      // Do stuff
+      // If the node has a left
+      if (node.left) {
+        traverse(node.left);
+      }
+      // If the node has a right
+      if (node.right) {
+        traverse(node.right);
+      }
+      // return node value
+      nodes.push(node.value);
+    }
+    // return array of variables
+    return nodes;
+  }
 }
 
 let bst = new BinarySearchTree();
@@ -133,3 +159,4 @@ bst.insert(20);
 
 console.log(bst.breadthFirstSearch()); // [10, 6, 15, 3, 8, 20]
 console.log(bst.depthFirstSearchPreOrder()); // [10, 6, 3, 8, 15, 20]
+console.log(bst.depthFirstSearchPostOrder()); // [3, 8, 6, 20, 15, 10]
