@@ -75,3 +75,15 @@
   - Push the node value to the variable that stores the values
 - Invoke the helper with the current variable
 - Return the array of variables
+
+## InOrder (Smallest to largest)
+
+- Same as Pre order, just push value after looking for left, then look at right
+- Create a variable to store the visited nodes
+- Create a variable called current and store the root
+- Write a helper function that accepts a node
+  - If the node has a left property call the helper on the left node
+  - Push the node value to the variable that stores the values
+  - If the node has a right property call the helper on the right
+- Invoke the helper with the current variable
+- Return the array of variables
