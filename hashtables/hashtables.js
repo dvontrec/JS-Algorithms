@@ -42,17 +42,57 @@ class HashTable {
     }
     return val;
   }
+
+  keys() {
+    // create an array to hold the keys
+    let keys = [];
+    // loop through the key map array
+    for (let i = 0; i < this.keyMap.length; i++) {
+      // if the array isnt empty
+      if (this.keyMap[i] !== undefined) {
+        // loop through the array inside of the key map
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          keys.push(this.keyMap[i][j][0]);
+        }
+      }
+    }
+    // return the keys array
+    return keys;
+  }
+
+  values() {
+    // create an array to hold the values
+    let values = [];
+    // loop through the key map array
+    for (let i = 0; i < this.keyMap.length; i++) {
+      // if the array isnt empty
+      if (this.keyMap[i] !== undefined) {
+        // loop through the array inside of the key map
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          // if the value is not in the array
+          if (!values.includes(this.keyMap[i][j][1])) {
+            values.push(this.keyMap[i][j][1]);
+          }
+        }
+      }
+    }
+    // return the values array
+    return values;
+  }
 }
 
 let hashTable = new HashTable(17);
 hashTable.set('pink', '#0008b');
-hashTable.set('salmon', '#fa8072');
+hashTable.set('salmon', '#FA8072');
 hashTable.set('maroon', '#800000');
 hashTable.set('yellow', '#FFFF00');
 hashTable.set('olive', '#808000');
 hashTable.set('lightcoral', '#F08080');
 hashTable.set('mediumviioletred', '#C71585');
 hashTable.set('plum', '#DDA0DD');
+hashTable.set('purple', '#DDA0DD');
 
 console.log(hashTable.get('pink'));
 console.log(hashTable.get('salmon'));
+console.log(hashTable.keys());
+console.log(hashTable.values());

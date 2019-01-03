@@ -14,3 +14,11 @@
 - Retrieves the value
   - retireve the array at the hash index where arr[0] == key
 - If key isnt found return undefined
+
+## Keys
+
+- Loops through the hash table array and returns an array of keys in the table
+
+## values
+
+- Loops through the hash table array and returns an array of unique values in the table
