@@ -46,9 +46,22 @@
 - Create a list to store visited vertices
 - Add the starting vertex t othe stack, and mark it visited
 - Wile the stack has something in it:
-  - pop the next vertex from the stack
+  - Pop the next vertex from the stack
   - If the vertex hasnt been visited
-    - mark as visited
+    - Mark as visited
     - Add to result list
-    - push all of its neighbors into the stack
+    - Push all of its neighbors into the stack
+- Return the results array
+
+## BFS
+
+- Accepts a vertex
+- Create a queue (array shift and push) and place the starting vertex in it
+- Create an array to store result nodes
+- Create a place to store visied nodes
+- Mark the starting node as visited
+- Loop as long as there is a queue
+  - Remove the first vertex from the queue and push it into the results array
+  - Loop over adjacent verteces
+    - If it has not been visited mark it as visited enqueue that vertex
 - Return the results array
