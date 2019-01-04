@@ -28,17 +28,62 @@ class Graph {
     // remove the key from the object
     delete this.adjacencyList[vertex];
   }
+
+  dfsRecursive(vertex) {
+    let list = this.adjacencyList;
+    let results = [];
+    let visited = [];
+    helper(vertex);
+    function helper(vertex) {
+      // base case
+      if (!vertex) {
+        return;
+      }
+      visited.push(vertex);
+      results.push(vertex);
+      list[vertex].forEach(v => {
+        if (!visited.includes(v)) {
+          helper(v);
+        }
+      });
+    }
+    return results;
+  }
+
+  dfsIterative(vertex) {
+    let stack = [];
+    let results = [];
+    let visited = [];
+    stack.push(vertex);
+    while (stack.length) {
+      let v = stack.pop();
+      if (!visited.includes(v)) {
+        visited.push(v);
+        results.push(v);
+        this.adjacencyList[v].forEach(vert => {
+          stack.push(vert);
+        });
+      }
+    }
+    return results;
+  }
 }
 
 let graph = new Graph();
-graph.addVertex('Tokyo');
-graph.addVertex('Dallas');
-graph.addVertex('Aspen');
-graph.addEdge('Tokyo', 'Dallas');
-graph.addEdge('Dallas', 'Aspen');
-graph.addEdge('Tokyo', 'Aspen');
+graph.addVertex('A');
+graph.addVertex('B');
+graph.addVertex('C');
+graph.addVertex('D');
+graph.addVertex('E');
+graph.addVertex('F');
 
-console.log(graph.adjacencyList);
+graph.addEdge('A', 'B');
+graph.addEdge('A', 'C');
+graph.addEdge('B', 'D');
+graph.addEdge('C', 'E');
+graph.addEdge('D', 'E');
+graph.addEdge('D', 'F');
+graph.addEdge('E', 'F');
 
-graph.removeVertex('Dallas');
-console.log(graph.adjacencyList);
+console.log(graph.dfsRecursive('A'));
+console.log(graph.dfsIterative('A'));
