@@ -11,10 +11,17 @@ class Graph {
       this.adjacencyList[val] = [];
     }
   }
+
+  addEdge(v1, v2) {
+    this.adjacencyList[v1].push(v2);
+    this.adjacencyList[v2].push(v1);
+  }
 }
 
 let graph = new Graph();
-graph.addVertex('A');
-graph.addVertex('B');
+graph.addVertex('Tokyo');
+graph.addVertex('Dallas');
+graph.addVertex('Aspen');
+graph.addEdge('Tokyo', 'Dallas');
 
 console.log(graph.adjacencyList);
