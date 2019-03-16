@@ -12,12 +12,12 @@ const checkPremutation = (s1, s2) => {
   // loop through the string adding characters to the object
   for (let i = 0; i < s1.length; i++) {
     // if the character is in the table increment, or else set it to one
-    if (chars1[i]) {
-      chars1[i]++;
-    } else chars1[i] = 1;
-    if (chars2[i]) {
-      chars2[i]++;
-    } else chars2[i] = 1;
+    if (chars1[s1[i].toLowerCase()]) {
+      chars1[s1[i].toLowerCase()]++;
+    } else chars1[s1[i].toLowerCase()] = 1;
+    if (chars2[s2[i].toLowerCase()]) {
+      chars2[s2[i].toLowerCase()]++;
+    } else chars2[s2[i].toLowerCase()] = 1;
   }
   // loops through all the characters and if they do not match character and count return false
   for (char in chars1) {
@@ -32,4 +32,5 @@ const checkPremutation = (s1, s2) => {
 console.log(checkPremutation('apple', 'palpe')); // true
 console.log(checkPremutation('', 'test')); // false
 console.log(checkPremutation('running back', 'rbuann cking')); // true
+console.log(checkPremutation('God', 'dog')); // true
 console.log(checkPremutation('God     ', 'dog')); // false
